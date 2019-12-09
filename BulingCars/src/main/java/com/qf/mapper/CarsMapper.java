@@ -28,4 +28,8 @@ public interface CarsMapper {
     int updateByPrimaryKeySelective(Cars record);
 
     int updateByPrimaryKey(Cars record);
+    //查询所有车辆
+    List<Cars> selAllCars();
+    //根据品牌类型查询
+    List<Cars> selType(Integer type);
 }

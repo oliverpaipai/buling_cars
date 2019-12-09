@@ -303,4 +303,10 @@
       type = #{type,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selAllCars" resultMap="BaseResultMap">
+    select * from cars
+  </select>
+  <select id="selType" resultMap="BaseResultMap">
+    select * from cars where type=#{type}
+  </select>
 </mapper>
