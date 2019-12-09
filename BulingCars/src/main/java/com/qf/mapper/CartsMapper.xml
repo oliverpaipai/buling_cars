@@ -178,4 +178,8 @@
       carid = #{carid,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="selectAllCarts" resultType="com.qf.pojo.Carts">
+    select * from carts
+  </select>
 </mapper>
