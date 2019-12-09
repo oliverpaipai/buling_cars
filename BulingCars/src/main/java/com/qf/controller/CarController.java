@@ -17,7 +17,7 @@ public class CarController {
 
     @RequestMapping("/list")
     public String cars(Model model){
-        List<Cars> cars = carService.selAllCars();
+        List<Cars> cars = carService.findAllCars();
         for (Cars car:cars){
             if (car.getStatus().equals(0)){
                 model.addAttribute("carlist",cars);
@@ -28,13 +28,13 @@ public class CarController {
     }
 @RequestMapping("/info")
     public String carInfo(Integer id,Model model){
-        Cars cars = carService.selById(id);
+        Cars cars = carService.findById(id);
         model.addAttribute("car",cars);
         return "carinfo";
     }
     @RequestMapping("/type")
     public String carType(Integer type,Model model){
-        List<Cars> selType = carService.selType(type);
+        List<Cars> selType = carService.findType(type);
         model.addAttribute("car",selType);
         return "typecar";
     }

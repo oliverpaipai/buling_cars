@@ -7,11 +7,11 @@ import java.util.List;
 public interface CarService {
 
     //查询所有车辆
-    List<Cars> selAllCars();
+    List<Cars> findAllCars();
 
     //根据id查询车
-    Cars selById(Integer id);
+    Cars findById(Integer id);
 
     //根据类型查询车辆
-    List<Cars> selType(Integer type);
+    List<Cars> findType(Integer type);
 }

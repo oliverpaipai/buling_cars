@@ -14,20 +14,20 @@ public class CarServiceImpl implements CarService {
     private CarsMapper carsMapper;
 
     @Override
-    public List<Cars> selAllCars() {
+    public List<Cars> findAllCars() {
         List<Cars> cars = carsMapper.selAllCars();
 
         return cars;
     }
 
     @Override
-    public Cars selById(Integer id) {
+    public Cars findById(Integer id) {
         Cars cars = carsMapper.selectByPrimaryKey(id);
         return cars;
     }
 
     @Override
-    public List<Cars> selType(Integer type) {
+    public List<Cars> findType(Integer type) {
         List<Cars> list = carsMapper.selType(type);
         return list;
     }
