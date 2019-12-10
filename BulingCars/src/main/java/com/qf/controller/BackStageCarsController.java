@@ -19,7 +19,7 @@ public class BackStageCarsController {
     public String selectAllCars(Model model){
         List<Cars> cars = backStageCarsService.selectAllCars();
         model.addAttribute("backcars",cars);
-        return "/BackStage.jsp";
+        return "BackStage";
     }
     @RequestMapping("/insertcar")
     public String insertCars(Cars cars){

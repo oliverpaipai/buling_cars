@@ -19,6 +19,31 @@
     <!-- ViewResolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/" />
-        <property name="suffix" value=".jsp" />
+        <property name="suffix" value=".html" />
     </bean>
+    <!--thymeleaf的配置-->
+    <!--配置模板解析器-->
+    <bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
+        <property name="prefix" value="/WEB-INF/templates/"></property>
+        <property name="suffix" value=".html"></property>
+        <property name="characterEncoding" value="UTF-8"></property>
+        <!--说明模板的模式-->
+        <property name="templateMode" value="HTML5"></property>
+    </bean>
+
+    <!--配置Thymeleaf的模板引擎-->
+    <bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
+        <!--注入模板解析器-->
+        <property name="templateResolver" ref="templateResolver"></property>
+    </bean>
+
+    <!--配置Thymeleaf的视图解析器-->
+    <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
+        <!--注入模板引擎-->
+        <property name="templateEngine" ref="templateEngine"></property>
+        <!--防止模板乱码-->
+        <property name="characterEncoding" value="UTF-8"></property>
+        <property name="contentType" value="text/html;charset=UTF-8"></property>
+    </bean>
+
 </beans>

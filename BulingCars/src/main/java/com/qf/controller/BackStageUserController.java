@@ -20,7 +20,7 @@ public class BackStageUserController {
     public String Users(Model model){
         List<Users> users = backStageService.selectAllUsers();
         model.addAttribute("backusers",users);
-        return "/BackStage.jsp";
+        return "backStageSy";
     }
     //修改用户
     @RequestMapping("/updateuser")

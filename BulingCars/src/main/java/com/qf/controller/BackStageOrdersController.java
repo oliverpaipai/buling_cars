@@ -18,7 +18,7 @@ public class BackStageOrdersController {
     public String selectAllOrders(Model model) {
         List<Orders> orders = backStageOrdersService.selectAllOrders();
         model.addAttribute("backorders",orders);
-        return "/BackStage.jsp";
+        return "BackStage";
     }
     @RequestMapping("/updateorder")
     public String updateOrders(Orders orders){
