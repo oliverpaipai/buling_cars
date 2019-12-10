@@ -3,13 +3,13 @@ package com.qf.service.impl;
 import com.qf.mapper.UsersMapper;
 import com.qf.pojo.Cars;
 import com.qf.pojo.Users;
-import com.qf.service.BackStageService;
+import com.qf.service.BackStageUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class BackStageServiceImpl implements BackStageService {
+public class BackStageUserServiceImpl implements BackStageUserService {
     @Autowired
     private UsersMapper usersMapper;
 
@@ -26,26 +26,6 @@ public class BackStageServiceImpl implements BackStageService {
 
     @Override
     public void deleteUsers(Integer id) {
-
-    }
-
-    @Override
-    public List<Cars> selectAllCars() {
-        return null;
-    }
-
-    @Override
-    public void insertCars(Cars cars) {
-
-    }
-
-    @Override
-    public void updateCars(Integer id) {
-
-    }
-
-    @Override
-    public void deleteCars(Integer id) {
-
+        usersMapper.deleteByPrimaryKey(id);
     }
 }

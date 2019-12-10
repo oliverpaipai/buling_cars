@@ -37,6 +37,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>spingmvc</servlet-name>
-    <url-pattern>*.go</url-pattern>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
 </web-app>

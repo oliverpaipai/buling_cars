@@ -240,4 +240,7 @@
       createtime = #{createtime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  <select id="selectAllOrders" resultMap="BaseResultMap">
+    select * from orders
+  </select>
 </mapper>

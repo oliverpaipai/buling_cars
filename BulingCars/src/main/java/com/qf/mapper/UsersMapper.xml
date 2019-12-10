@@ -208,4 +208,7 @@
       email = #{email,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectAllUsers" resultMap="BaseResultMap">
+    select * from users
+  </select>
 </mapper>

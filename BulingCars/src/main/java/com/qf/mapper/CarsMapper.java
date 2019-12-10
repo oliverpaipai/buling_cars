@@ -28,4 +28,6 @@ public interface CarsMapper {
     int updateByPrimaryKeySelective(Cars record);
 
     int updateByPrimaryKey(Cars record);
+
+    List<Cars> selectAllCars();
 }
